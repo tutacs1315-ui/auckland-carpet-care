@@ -62,10 +62,23 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      // Replace YOUR_FORM_ID with your Formspree form ID (free at formspree.io)
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please call us on (09) 234 5678.');
+      }
+    } catch {
+      alert('Network error. Please call us on (09) 234 5678.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
