@@ -8,7 +8,6 @@ const steps = [
     description:
       'Call us or fill in our online form. We\'ll ask a few quick questions and give you a clear, upfront price — no obligation, no hidden costs.',
     color: 'bg-blue-500',
-    light: 'bg-blue-50 text-blue-600',
   },
   {
     step: '02',
@@ -17,16 +16,14 @@ const steps = [
     description:
       'Choose a time that suits you — morning, afternoon, or weekend. We\'ll confirm your booking immediately and send a reminder before we arrive.',
     color: 'bg-purple-500',
-    light: 'bg-purple-50 text-purple-600',
   },
   {
     step: '03',
     icon: Sparkles,
     title: 'We Clean Your Carpets',
     description:
-      'Our trained technicians arrive on time with professional equipment. We pre-treat stains, deep clean, and leave your home fresh and tidy.',
+      'Our trained technicians arrive on time with truck-mount equipment. We pre-treat stains, deep clean, and leave your home fresh and tidy.',
     color: 'bg-teal-500',
-    light: 'bg-teal-50 text-teal-600',
   },
   {
     step: '04',
@@ -35,7 +32,6 @@ const steps = [
     description:
       'Admire your clean, fresh carpets. They\'ll be dry within 2–4 hours. If you\'re not 100% satisfied, we\'ll come back and re-clean at no charge.',
     color: 'bg-green-500',
-    light: 'bg-green-50 text-green-600',
   },
 ];
 
@@ -54,12 +50,12 @@ export default function Process() {
         </div>
 
         {/* Steps */}
-        <div className="relative">
+        <div className="relative mb-16">
           {/* Connector line (desktop) */}
           <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 via-teal-200 to-green-200 mx-20" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, idx) => {
+            {steps.map((step) => {
               const Icon = step.icon;
               return (
                 <div key={step.step} className="flex flex-col items-center text-center group">
@@ -68,7 +64,7 @@ export default function Process() {
                     <div className={`w-16 h-16 rounded-full ${step.color} text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform z-10 relative`}>
                       <Icon size={28} />
                     </div>
-                    <div className={`absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white shadow-md border-2 border-gray-100 flex items-center justify-center text-xs font-bold text-gray-700`}>
+                    <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white shadow-md border-2 border-gray-100 flex items-center justify-center text-xs font-bold text-gray-700">
                       {step.step}
                     </div>
                   </div>
@@ -81,10 +77,29 @@ export default function Process() {
           </div>
         </div>
 
+        {/* Photo strip */}
+        <div className="grid grid-cols-3 gap-4 mb-14 rounded-3xl overflow-hidden shadow-md">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75&auto=format&fit=crop"
+            alt="Carpet cleaning technician with wand"
+            className="w-full h-48 object-cover"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1527515545081-5db817172677?w=500&q=75&auto=format&fit=crop"
+            alt="Hot water extraction carpet cleaning in progress"
+            className="w-full h-48 object-cover"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&q=75&auto=format&fit=crop"
+            alt="Clean fresh carpet after professional cleaning"
+            className="w-full h-48 object-cover"
+          />
+        </div>
+
         {/* CTA */}
-        <div className="mt-14 text-center">
+        <div className="mt-4 text-center">
           <a href="#contact" className="btn-primary text-base px-8 py-4">
-            Start the Process — Get a Free Quote
+            Start the Process &mdash; Get a Free Quote
           </a>
         </div>
       </div>

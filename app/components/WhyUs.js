@@ -12,9 +12,9 @@ import {
 const reasons = [
   {
     icon: Award,
-    title: '15+ Years of Experience',
+    title: 'Trained Professionals',
     description:
-      'Over a decade and a half serving Auckland homeowners and businesses with consistent, professional results.',
+      'Our technicians are fully trained in hot water extraction and carpet care, delivering consistent, professional results on every job.',
     color: 'text-yellow-600 bg-yellow-50',
   },
   {
@@ -35,7 +35,7 @@ const reasons = [
     icon: Zap,
     title: 'Fast Drying Times',
     description:
-      'Our advanced equipment extracts maximum moisture, so your carpets are typically dry within 2–4 hours.',
+      'Our truck-mount equipment extracts maximum moisture, so your carpets are typically dry within 2&ndash;4 hours.',
     color: 'text-purple-600 bg-purple-50',
   },
   {
@@ -77,14 +77,45 @@ export default function WhyUs() {
           <span className="badge bg-green-100 text-green-700 mb-3">Why Choose Us</span>
           <h2 className="section-title">The Auckland Carpet Care Difference</h2>
           <p className="section-subtitle mx-auto">
-            We don&apos;t just clean carpets — we deliver a premium experience from booking to the final result.
+            We don&apos;t just clean carpets &mdash; we deliver a premium experience from booking to the final result.
             Here&apos;s what sets us apart.
           </p>
         </div>
 
-        {/* Reasons grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reasons.map((reason) => {
+        {/* Two-column: photo + reasons */}
+        <div className="grid lg:grid-cols-2 gap-10 mb-14 items-center">
+          {/* Photo */}
+          <div className="rounded-3xl overflow-hidden shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80&auto=format&fit=crop"
+              alt="Close-up of carpet cleaning wand extracting dirt from carpet fibres"
+              className="w-full h-80 object-cover"
+            />
+          </div>
+
+          {/* Reasons (first 4) */}
+          <div className="grid sm:grid-cols-2 gap-4">
+            {reasons.slice(0, 4).map((reason) => {
+              const Icon = reason.icon;
+              return (
+                <div
+                  key={reason.title}
+                  className="group p-5 rounded-2xl border border-gray-100 hover:border-brand-blue hover:shadow-md transition-all duration-300"
+                >
+                  <div className={`w-10 h-10 rounded-xl ${reason.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="font-bold text-brand-navy mb-1 text-sm">{reason.title}</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">{reason.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Remaining reasons grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {reasons.slice(4).map((reason) => {
             const Icon = reason.icon;
             return (
               <div
@@ -102,12 +133,13 @@ export default function WhyUs() {
         </div>
 
         {/* Banner */}
-        <div className="mt-16 rounded-3xl bg-hero-pattern p-8 md:p-12 text-white text-center shadow-xl">
+        <div className="rounded-3xl bg-hero-pattern p-8 md:p-12 text-white text-center shadow-xl">
           <h3 className="text-2xl md:text-3xl font-bold mb-3">
             Ready for Cleaner Carpets?
           </h3>
           <p className="text-blue-100 mb-6 max-w-xl mx-auto">
-            Join thousands of satisfied Auckland customers who trust us with their homes and businesses.
+            Get a free, no-obligation quote today. We serve all of Auckland and pride ourselves
+            on honest pricing and outstanding results.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#contact" className="btn-secondary">

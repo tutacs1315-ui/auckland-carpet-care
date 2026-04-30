@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -13,20 +13,14 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [menuOpen,   setMenuOpen]   = useState(false);
-  const [scrolled,   setScrolled]   = useState(false);
-  const [activeLink, setActiveLink] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleNavClick = (href) => {
-    setActiveLink(href);
-    setMenuOpen(false);
-  };
 
   return (
     <header
@@ -39,11 +33,11 @@ export default function Header() {
       {/* Top bar */}
       <div className={`${scrolled ? 'hidden' : 'block'} bg-brand-navy text-white text-sm`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex justify-between items-center">
-          <span>Auckland&apos;s #1 Rated Carpet Cleaning Service</span>
+          <span>Auckland&apos;s Professional Carpet Cleaning Specialists</span>
           <div className="flex items-center gap-4">
-            <span>Mon–Sat: 7am–7pm</span>
-            <a href="tel:+6492345678" className="font-semibold hover:text-brand-sky transition-colors">
-              (09) 234 5678
+            <span>Mon&ndash;Sat: 7am&ndash;7pm</span>
+            <a href="tel:+64210750733" className="font-semibold hover:text-brand-sky transition-colors">
+              021 075 0733
             </a>
           </div>
         </div>
@@ -72,7 +66,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => handleNavClick(link.href)}
+                onClick={() => setMenuOpen(false)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   scrolled
                     ? 'text-gray-700 hover:text-brand-blue hover:bg-blue-50'
@@ -87,13 +81,13 @@ export default function Header() {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+6492345678"
+              href="tel:+64210750733"
               className={`flex items-center gap-2 text-sm font-semibold transition-colors ${
                 scrolled ? 'text-brand-blue' : 'text-white'
               }`}
             >
               <Phone size={16} />
-              (09) 234 5678
+              021 075 0733
             </a>
             <a href="#contact" className="btn-primary text-sm px-4 py-2">
               Free Quote
@@ -123,15 +117,15 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => handleNavClick(link.href)}
+                onClick={() => setMenuOpen(false)}
                 className="px-4 py-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col gap-2">
-              <a href="tel:+6492345678" className="btn-secondary text-sm">
-                <Phone size={16} /> (09) 234 5678
+              <a href="tel:+64210750733" className="btn-secondary text-sm">
+                <Phone size={16} /> 021 075 0733
               </a>
               <a href="#contact" className="btn-primary text-sm">
                 Get a Free Quote

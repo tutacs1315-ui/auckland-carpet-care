@@ -6,16 +6,23 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 const contactInfo = [
   {
     icon: Phone,
-    label: 'Phone',
-    value: '(09) 234 5678',
-    href: 'tel:+6492345678',
+    label: 'Admin',
+    value: '021 075 0733',
+    href: 'tel:+64210750733',
     color: 'bg-blue-50 text-blue-600',
+  },
+  {
+    icon: Phone,
+    label: 'Manager (Xavier)',
+    value: '021 263 5457',
+    href: 'tel:+64212635457',
+    color: 'bg-sky-50 text-sky-600',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@aucklandcarpetcare.co.nz',
-    href: 'mailto:info@aucklandcarpetcare.co.nz',
+    value: 'admin@aucklandcarpetcare.co.nz',
+    href: 'mailto:admin@aucklandcarpetcare.co.nz',
     color: 'bg-purple-50 text-purple-600',
   },
   {
@@ -63,7 +70,6 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      // Replace YOUR_FORM_ID with your Formspree form ID (free at formspree.io)
       const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -72,10 +78,10 @@ export default function Contact() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        alert('Something went wrong. Please call us on (09) 234 5678.');
+        alert('Something went wrong. Please call us on 021 075 0733.');
       }
     } catch {
-      alert('Network error. Please call us on (09) 234 5678.');
+      alert('Network error. Please call us on 021 075 0733.');
     } finally {
       setLoading(false);
     }
@@ -89,7 +95,7 @@ export default function Contact() {
           <span className="badge bg-teal-100 text-teal-700 mb-3">Get In Touch</span>
           <h2 className="section-title">Get Your Free Quote Today</h2>
           <p className="section-subtitle mx-auto">
-            Fill in the form below and we&apos;ll get back to you within the hour with a free, no-obligation quote.
+            Fill in the form below and we&apos;ll get back to you quickly with a free, no-obligation quote.
             Or give us a call for an instant quote over the phone.
           </p>
         </div>
@@ -145,9 +151,9 @@ export default function Contact() {
               <p className="text-blue-100 text-sm mb-4">
                 Call us now for emergency same-day carpet cleaning across Auckland.
               </p>
-              <a href="tel:+6492345678" className="inline-flex items-center gap-2 bg-white text-brand-navy font-bold px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+              <a href="tel:+64210750733" className="inline-flex items-center gap-2 bg-white text-brand-navy font-bold px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
                 <Phone size={16} />
-                (09) 234 5678
+                021 075 0733
               </a>
             </div>
           </div>
@@ -163,10 +169,10 @@ export default function Contact() {
                   Request Received!
                 </h3>
                 <p className="text-gray-600 max-w-sm">
-                  Thanks for getting in touch. We&apos;ll respond within the hour with your free quote.
+                  Thanks for getting in touch. We&apos;ll be in contact shortly with your free quote.
                   If you need urgent help, call us on{' '}
-                  <a href="tel:+6492345678" className="text-brand-blue font-semibold">
-                    (09) 234 5678
+                  <a href="tel:+64210750733" className="text-brand-blue font-semibold">
+                    021 075 0733
                   </a>
                   .
                 </p>
@@ -241,7 +247,7 @@ export default function Contact() {
                       onChange={handleChange}
                       className="input-field"
                     >
-                      <option value="">Select a service…</option>
+                      <option value="">Select a service&hellip;</option>
                       {services.map((s) => (
                         <option key={s} value={s}>{s}</option>
                       ))}
@@ -257,7 +263,7 @@ export default function Contact() {
                       onChange={handleChange}
                       className="input-field"
                     >
-                      <option value="">Select…</option>
+                      <option value="">Select&hellip;</option>
                       {['1', '2', '3', '4', '5', '6+'].map((n) => (
                         <option key={n} value={n}>{n} {n === '1' ? 'room' : 'rooms'}</option>
                       ))}
@@ -274,7 +280,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     rows={4}
-                    placeholder="Tell us about any specific stains, odours, or special requirements…"
+                    placeholder="Tell us about any specific stains, odours, or special requirements&hellip;"
                     className="input-field resize-none"
                   />
                 </div>
@@ -290,7 +296,7 @@ export default function Contact() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                       </svg>
-                      Sending…
+                      Sending&hellip;
                     </span>
                   ) : (
                     <span className="flex items-center gap-2">
@@ -301,7 +307,7 @@ export default function Contact() {
                 </button>
 
                 <p className="text-xs text-gray-400 text-center">
-                  We respond within 1 hour during business hours. No spam, ever.
+                  We respond promptly during business hours. No spam, ever.
                 </p>
               </form>
             )}

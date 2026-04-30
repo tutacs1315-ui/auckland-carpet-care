@@ -5,7 +5,7 @@ const services = [
     icon: Droplets,
     title: 'Steam Carpet Cleaning',
     description:
-      'Our hot water extraction method penetrates deep into carpet fibres, removing embedded dirt, bacteria, and allergens. Leaves carpets fresh and fast-drying.',
+      'Our truck-mount hot water extraction method penetrates deep into carpet fibres, removing embedded dirt, bacteria, and allergens. Leaves carpets fresh and fast-drying.',
     features: ['Deep penetration cleaning', 'Kills 99.9% of bacteria', 'Fast drying — 2–4 hours', 'Safe for all carpet types'],
     color: 'bg-blue-50 text-blue-600',
     highlight: true,
@@ -73,8 +73,24 @@ export default function Services() {
           <h2 className="section-title">Complete Cleaning Solutions</h2>
           <p className="section-subtitle mx-auto">
             From residential carpets to commercial spaces, we deliver professional results
-            using industry-leading equipment and eco-friendly products.
+            using truck-mount equipment and eco-friendly products.
           </p>
+        </div>
+
+        {/* Photo banner */}
+        <div className="rounded-3xl overflow-hidden mb-12 shadow-lg relative">
+          <img
+            src="https://images.unsplash.com/photo-1527515545081-5db817172677?w=1200&q=80&auto=format&fit=crop"
+            alt="Carpet cleaning technician operating truck-mount hot water extraction wand on residential carpet"
+            className="w-full h-56 object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/40 to-transparent flex items-center px-10">
+            <div className="text-white max-w-md">
+              <p className="text-brand-sky font-semibold text-sm mb-1">Professional Equipment</p>
+              <h3 className="text-2xl font-bold">Truck-Mount Hot Water Extraction</h3>
+              <p className="text-blue-200 text-sm mt-1">The gold standard in carpet cleaning — more power, better results.</p>
+            </div>
+          </div>
         </div>
 
         {/* Services grid */}
@@ -120,7 +136,7 @@ export default function Services() {
                   href="#contact"
                   className="mt-5 inline-flex items-center text-sm font-semibold text-brand-blue hover:text-blue-700 transition-colors"
                 >
-                  Book This Service →
+                  Book This Service &rarr;
                 </a>
               </div>
             );
@@ -130,8 +146,8 @@ export default function Services() {
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">Not sure which service you need? We&apos;ll help you decide.</p>
-          <a href="tel:+6492345678" className="btn-primary">
-            Call Us for Advice — (09) 234 5678
+          <a href="tel:+64210750733" className="btn-primary">
+            Call Us for Advice &mdash; 021 075 0733
           </a>
         </div>
       </div>

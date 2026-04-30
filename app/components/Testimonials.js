@@ -5,7 +5,7 @@ const testimonials = [
     name: 'Sarah Mitchell',
     location: 'Remuera, Auckland',
     rating: 5,
-    text: 'I cannot believe the transformation! My 10-year-old carpet looks brand new. The team was professional, punctual, and incredibly thorough. Will definitely use again.',
+    text: 'I cannot believe the transformation! My carpet looks brand new. The team was professional, punctual, and incredibly thorough. Will definitely use again.',
     service: 'Steam Carpet Cleaning',
     avatar: 'SM',
     color: 'bg-blue-500',
@@ -23,7 +23,7 @@ const testimonials = [
     name: 'Mark Thompson',
     location: 'Takapuna, Auckland',
     rating: 5,
-    text: 'Used them for our office building — 3 floors of carpet. They came in over the weekend, minimal disruption, and the results were outstanding. Highly recommend for commercial.',
+    text: 'Used them for our office space. They came in, minimal disruption, and the results were outstanding. Highly recommend for commercial cleaning.',
     service: 'Commercial Cleaning',
     avatar: 'MT',
     color: 'bg-teal-500',
@@ -32,7 +32,7 @@ const testimonials = [
     name: 'Emma Parekura',
     location: 'Henderson, Auckland',
     rating: 5,
-    text: 'My two dogs had really done a number on the living room carpet. The team removed the odour completely and the carpet looks amazing. Very impressed with the pet treatment!',
+    text: 'My two dogs had really done a number on the living room carpet. The team removed the odour completely and the carpet looks amazing. Very impressed!',
     service: 'Odour Removal',
     avatar: 'EP',
     color: 'bg-orange-500',
@@ -41,7 +41,7 @@ const testimonials = [
     name: 'David & Karen Walsh',
     location: 'Botany, Auckland',
     rating: 5,
-    text: 'Booked for a house move clean. Same-day service, turned up on time, and did a brilliant job on both the carpets and the upholstery. Price was very fair too.',
+    text: 'Booked for a house move clean. Same-day service, turned up on time, and did a brilliant job on both the carpets and the upholstery. Price was very fair.',
     service: 'Carpet & Upholstery',
     avatar: 'DW',
     color: 'bg-green-500',
@@ -50,7 +50,7 @@ const testimonials = [
     name: 'Priya Sharma',
     location: 'Manukau, Auckland',
     rating: 5,
-    text: 'I\'ve tried other carpet cleaners before but Auckland Carpet Care is on a completely different level. Professional equipment, eco-friendly products, and superb results.',
+    text: 'Professional equipment, eco-friendly products, and superb results. The technician was knowledgeable and really took care with our carpet. Highly recommend.',
     service: 'Steam Carpet Cleaning',
     avatar: 'PS',
     color: 'bg-indigo-500',
@@ -76,20 +76,20 @@ export default function Testimonials() {
           <span className="badge bg-yellow-100 text-yellow-700 mb-3">Customer Reviews</span>
           <h2 className="section-title">What Our Customers Say</h2>
           <p className="section-subtitle mx-auto">
-            Don&apos;t just take our word for it — here&apos;s what thousands of Auckland homeowners and
-            businesses have to say about our services.
+            Here&apos;s what Auckland homeowners and businesses have to say
+            about their experience with us.
           </p>
 
           {/* Overall rating */}
           <div className="inline-flex items-center gap-3 mt-6 bg-gray-50 rounded-2xl px-6 py-3">
-            <div className="text-4xl font-black text-brand-navy">4.9</div>
+            <div className="text-4xl font-black text-brand-navy">5.0</div>
             <div>
               <div className="flex gap-0.5 mb-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <div className="text-sm text-gray-600">Based on 500+ reviews</div>
+              <div className="text-sm text-gray-600">Rated 5 stars by our customers</div>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function Testimonials() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm mb-4">
-            Join 5,000+ satisfied Auckland customers
+            Ready to experience the difference? Get your free quote today.
           </p>
           <a href="#contact" className="btn-primary">
             Book Your Clean Today
